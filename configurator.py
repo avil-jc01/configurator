@@ -35,4 +35,4 @@ def get_config(config_path):
 
 
 # print(get_env_vars())
-print(get_config(Path("config.ini")))
+# print(get_config(Path("config.ini")))
