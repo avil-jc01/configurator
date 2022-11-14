@@ -17,6 +17,10 @@ def get_config(config_path):
 
     with open(config_path) as f:
         for line in f:
+            # don't pick up commented lines
+            if line[0] == "#" or ";":
+                continue
+
             line = line.strip()
             _values = line.split("=")
 
@@ -26,4 +30,4 @@ def get_config(config_path):
 
 
 # print(get_env_vars())
-# print(get_config(Path("config.ini")))
+print(get_config(Path("config.ini")))
