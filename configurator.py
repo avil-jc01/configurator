@@ -18,7 +18,7 @@ def get_config(config_path):
     with open(config_path) as f:
         for line in f:
             # don't pick up commented lines
-            if line[0] == "#" or ";":
+            if line[0] == "#" or line[0] == ";":
                 continue
 
             line = line.strip()
