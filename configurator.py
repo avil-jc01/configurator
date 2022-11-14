@@ -17,11 +17,16 @@ def get_config(config_path):
 
     with open(config_path) as f:
         for line in f:
+            line = line.strip()
+
+            # skip blank lines
+            if not line:
+                continue
+
             # don't pick up commented lines
             if line[0] == "#" or line[0] == ";":
                 continue
 
-            line = line.strip()
             _values = line.split("=")
 
             config[_values[0].strip()] = _values[1].strip()
